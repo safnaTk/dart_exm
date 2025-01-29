@@ -5,8 +5,7 @@
 // }
 
 // void printSquares(int n) {
-//   for (int i = 
-//   1; i <= n; i++) {
+//   for (int i =  1; i <= n; i++) {
 //     print(i * i);
 //   }
 // }
@@ -90,10 +89,37 @@
 // }
 
 
-// 4.)Define a mixin called Logger that has a method logMessage(String message) to print messages to the console. 
-// Create an abstract class Vehicle with abstract methods startEngine() andstopEngine().
-// Implement the Logger mixin in a class Car that extends Vehicle.
-// Implement the abstract methods to print log messages when the engine starts 
+// 4.
+
+mixin logger{
+  logMessage(String message){
+    print(message);
+  }
+
+}
+
+abstract class Vehicle {
+
+void startEngine();
+void stopEngine();
+
+}
+
+class Car extends Vehicle with logger{
+  @override
+  void startEngine()
+  {
+   
+logMessage(" starts");
+  
+
+  }
+@override 
+void stopEngine(){
+ logMessage("stop");
+}
+
+  }
 
 
 
@@ -103,11 +129,4 @@
 
 
 
-// Create a base class named Shape with a private instance variable color. 
-//Implement amethod displayColor() within the Shape class to display the color. 
-//Next, create two derived classes, Circle and Rectangle, that inherit from the Shape class. 
-//The Circle class should have a private property radius, and the Rectangle class should haveprivate properties length and width. Implement constructors for each derived class toinitialize their respective properties. To demonstrate encapsulation, provide getter and setter methods for the private
-// variables (color, radius, length, and width) 
-
-// 3.
 
